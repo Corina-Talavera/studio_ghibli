@@ -39,15 +39,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "gem-release"
   spec.add_dependency "nokogiri"
 end
-© 2018 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
+
