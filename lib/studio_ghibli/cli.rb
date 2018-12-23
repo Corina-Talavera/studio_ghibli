@@ -8,12 +8,12 @@ class StudioGhibli::CLI
 
   def welcome
     puts ""
-    puts "********** Welcome to the StudioGhibli CLI **********"
+    puts "** Welcome to the StudioGhibli CLI **"
     puts ""
   end
 
   def list_film
-    StudioGhibli::Scraper.scrape_data
+    StudioGhibli::StudioGhibliAPI
     StudioGhibli::Film.all.each do |film, i|
       if i
         puts "#{i}. #{film.title}"
