@@ -1,0 +1,8 @@
+require 'pry'
+require 'nokogiri'
+require 'open-uri'
+
+require_relative '../lib/studio_ghibli/api'
+require_relative '../lib/studio_ghibli/film'
+require_relative '../lib/studio_ghibli/cli'
+require_relative '../lib/studio_ghibli/version'
