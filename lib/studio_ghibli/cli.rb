@@ -13,7 +13,6 @@ class StudioGhibli::CLI
   end
 
   def list_film
-    StudioGhibli::StudioGhibliAPI
     StudioGhibli::Film.all.each do |film, i|
       if i
         puts "#{i}. #{film.title}"
