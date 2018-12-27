@@ -1,8 +1,6 @@
 class StudioGhibli::Film
   attr_accessor :title, :description, :rt_score,
 
-  @@all = []
-
   def initialize(title, description, rt_score)
     @title = title
     @description = description
@@ -22,3 +20,4 @@ class StudioGhibli::Film
     @@all[index]
   end
 end
+
