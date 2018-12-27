@@ -3,3 +3,5 @@
 require_relative '../lib/studio_ghibli'
 
 CLI.new.call
+
+# current bug is that when I run only the CLI call is showing but the studio ghibli films are not listing 
