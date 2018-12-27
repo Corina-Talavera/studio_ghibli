@@ -23,10 +23,6 @@ class CLI
         puts "#{title}"
         end
     end
-    puts "See a film you like? Type out the name. Example: Spirited Away"
-  
-      
-  
   def film_info
     Film.all.each do |film|
       puts "#{film.title.upcase}"
