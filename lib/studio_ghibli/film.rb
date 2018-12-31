@@ -1,24 +1,17 @@
+class Film
+  attr_accessor :title, :description, :rt_score
 
-class StudioGhibli::Film
   @@all = [ ]
-  attr_accessor :title, :description, :rt_score,
 
-  def initialize(title, description, rt_score)
-    @title = title
-    @description = description
-    @rt_score = rt_score
-    save
+  def initialize
+    @@all << self
   end
 
   def self.all
     @@all
   end
 
-  def save
-    @@all << self
-  end
-
-  def self.find_by_index(index)
-    @@all[index]
+  def self.find(id)
+    self.all[id-1]
   end
 end
