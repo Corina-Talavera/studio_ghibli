@@ -5,7 +5,7 @@ require 'net/http'
 require 'rubygems'
 require 'json'
 
-class StudioGhibliAPI
+class API
   def get_film
    data = open('https://ghibliapi.herokuapp.com/films')
    .read
@@ -24,7 +24,7 @@ class Film
    end
 end  
 
-api = StudioGhibliAPI.new
+api = API.new
 results = api.get_film.map do |title_hash|
   Film.new(title_hash)
 end  
