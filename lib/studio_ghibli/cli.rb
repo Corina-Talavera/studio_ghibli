@@ -13,15 +13,29 @@ class CLI
     puts ""
   end
 
-  def list_films
-    Film.all.each.with_index(1) do |film, i|
-      if i <= 20
-        puts "#{i}. #{film.title}"
-      end
+ def list_films
+    puts "**Film List**"
+    api = API.new
+    results = api.get_film.map do |title_hash|
+      Film.new(title_hash)
+    end
+    i = 1
+    results.each do |film|
+      puts "#{i}. #{film.title}"
+      i = i+1
     end
     puts ""
   end
 
+  def print_film(film)
+    puts ""
+    puts  "-------------- #{film.title} --------------"
+    puts ""
+    puts film.description
+    puts ""
+    puts film.rt_score
+    puts ""
+  end
   def print_film(film)
     puts ""
     puts  "-------------- #{film.title} --------------"
