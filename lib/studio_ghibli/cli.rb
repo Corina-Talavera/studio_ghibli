@@ -13,18 +13,12 @@ class CLI
     puts ""
   end
 
- def list_films
+  def list_films
     puts "**Film List**"
-    api = API.new
-    results = api.get_film.map do |title_hash|
-      Film.new(title_hash)
+    @films = Film.all
+    @films.each.with_index do |film, i|
+      puts "#{i+1}. #{film.title}"
     end
-    i = 1
-    results.each do |film|
-      puts "#{i}. #{film.title}"
-      i = i+1
-    end
-    puts ""
   end
 
   def print_film(film)
@@ -36,24 +30,23 @@ class CLI
     puts film.rt_score
     puts ""
   end
-
-def menu
-      input = nil
-      while input != "exit"
-        puts "Select which movie you would like to learn about by typing number."
-        puts "Type menu to see the list of movies again, or type exit to end the program."
-        input = gets.chomp
-        if input > 0
-             print_film(film)
-          end
-        elsif input == "menu"
-          list_films
-        else
-          puts "Not sure what you want? Type menu or exit." unless input == "exit"
+  def menu
+    input = nil
+    while input != "exit"
+      puts "Select which movie you would like to learn about by typing number."
+      puts "Type menu to see the list of movies again, or type exit to end the program."
+      input = gets.strip.downcase
+      if input.to_i > 0
+        if film = @films[input.to_i-1]
+           print_film(film)
         end
+      elsif input == "film"
+        list_movies
+      else
+        puts "Huh? That didn't make sense! Type menu or exit." unless input == "exit"
       end
     end
-
+  end
   def good_bye
    puts "Goodbye!"
   end
