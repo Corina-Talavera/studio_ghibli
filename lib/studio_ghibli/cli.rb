@@ -20,14 +20,13 @@ class CLI
       puts "#{i+1}. #{film.title}"
     end
   end
-
   def print_film(film)
     puts ""
     puts  "-------------- #{film.title} --------------"
     puts ""
-    puts film.description
+    puts "Description: #{film.description}"
     puts ""
-    puts film.rt_score
+    puts "Rotten Tomato Score: #{film.rt_score}"
     puts ""
   end
   def menu
