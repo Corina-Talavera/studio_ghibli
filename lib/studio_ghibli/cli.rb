@@ -39,8 +39,8 @@ class CLI
         if film = @films[input.to_i-1]
            print_film(film)
         end
-      elsif input == "film"
-        list_movies
+      elsif input == "menu"
+        list_film
       else
         puts "Huh? That didn't make sense! Type menu or exit." unless input == "exit"
       end
