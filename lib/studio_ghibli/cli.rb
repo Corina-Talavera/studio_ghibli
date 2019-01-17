@@ -40,7 +40,7 @@ class CLI
            print_film(film)
         end
       elsif input == "menu"
-        list_film
+        list_films
       else
         puts "Huh? That didn't make sense! Type menu or exit." unless input == "exit"
       end
